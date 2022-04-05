@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 
 class MyApp extends StatefulWidget {
-  const MyApp({ Key? key }) : super(key: key);
+  MyApp._internal(); //private constructor
+  int appState = 0;
+
+  static final MyApp instance = MyApp._internal(); // single instance
+
+  factory MyApp() => instance; // factory for the class instance
 
   @override
   State<MyApp> createState() => _MyAppState();
@@ -10,8 +15,6 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      
-    );
+    return Scaffold();
   }
 }
