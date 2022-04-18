@@ -12,6 +12,8 @@ class AppStrings{
   static const String onBoardingSubTitle3="Tut app is a platform for learning and teaching";
   static const String onBoardingSubTitle4="Tut app is a platform for learning and teaching";
 
+  static const String skip="Skip";
+
 
 
 }

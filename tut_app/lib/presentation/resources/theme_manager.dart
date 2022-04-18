@@ -58,6 +58,8 @@ ThemeData getApplicationTheme() {
           color: ColorManager.darkGrey, fontSize: FontSizeManager.s6),
       subtitle1: getMediumStyle(
           color: ColorManager.lightGrey, fontSize: FontSizeManager.s4),
+      subtitle2: getMediumStyle(
+          color: ColorManager.primary, fontSize: FontSizeManager.s4),
       caption: getRegularStyle(color: ColorManager.grey1),
       bodyText1: getRegularStyle(color: ColorManager.grey),
     ),
@@ -84,7 +86,8 @@ ThemeData getApplicationTheme() {
 
       // focused border
       focusedBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: ColorManager.primary, width: AppSize.s1_5),
+        borderSide:
+            BorderSide(color: ColorManager.primary, width: AppSize.s1_5),
         borderRadius: const BorderRadius.all(Radius.circular(AppSize.s8)),
       ),
 
@@ -96,11 +99,10 @@ ThemeData getApplicationTheme() {
 
       //focused error border
       focusedErrorBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: ColorManager.primary, width: AppSize.s1_5),
+        borderSide:
+            BorderSide(color: ColorManager.primary, width: AppSize.s1_5),
         borderRadius: const BorderRadius.all(Radius.circular(AppSize.s8)),
       ),
-
-
     ),
   );
 }
