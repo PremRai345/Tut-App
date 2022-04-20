@@ -27,7 +27,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
         SliderObject(AppStrings.onBoardingSubTitle3,
             AppStrings.onBoardingTitle3, ImageAssets.onboardingLogo3),
         SliderObject(AppStrings.onBoardingSubTitle4,
-            AppStrings.onBoardingTitle1, ImageAssets.onboardingLogo4),
+            AppStrings.onBoardingTitle4, ImageAssets.onboardingLogo4),
       ];
 
   @override
@@ -57,20 +57,26 @@ class _OnBoardingViewState extends State<OnBoardingView> {
       ),
       bottomSheet: Container(
         color: ColorManager.white,
-        height: AppSize.s100,
-        child: Column(children: [
-          Align(
-            alignment: Alignment.centerRight,
-            child: TextButton(
-              onPressed: () {},
-              child:  Text(
-                AppStrings.skip,
-                style: Theme.of(context).textTheme.subtitle2,
-                textAlign: TextAlign.end,
+        width: double.infinity,
+        height: 120,
+        child: Column(
+          children: [
+            Align(
+              alignment: Alignment.centerRight,
+              child: TextButton(
+                onPressed: () {},
+                child: Text(
+                  AppStrings.skip,
+                  style: Theme.of(context).textTheme.subtitle2,
+                  textAlign: TextAlign.end,
+                ),
               ),
             ),
-          ),
-        ]),
+
+            //button sheet widget is called
+            getBottomSheetWidget()
+          ],
+        ),
       ),
     );
   }
@@ -88,7 +94,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
               child: SizedBox(
                 height: AppSize.s40,
                 width: AppSize.s20,
-                child: SvgPicture.asset(ImageAssets.rightarrowIc),
+                child: SvgPicture.asset(ImageAssets.leftArrowIc),
               ),
               onTap: () {
                 // next slide
@@ -118,7 +124,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
               child: SizedBox(
                 height: AppSize.s40,
                 width: AppSize.s20,
-                child: SvgPicture.asset(ImageAssets.leftArrowIc),
+                child: SvgPicture.asset(ImageAssets.rightarrowIc),
               ),
               onTap: () {
                 pageController.animateToPage(getPrevoiusIndex(),
@@ -134,9 +140,9 @@ class _OnBoardingViewState extends State<OnBoardingView> {
   }
 
   int getPrevoiusIndex() {
-    int previousIndex = currentIndex - 1; //-1
+    int previousIndex = currentIndex--; //-1
     if (previousIndex == -1) {
-      previousIndex =
+      currentIndex =
           list.length - 1; // infinite loop to go to the length of slider list
 
     }
@@ -163,8 +169,8 @@ class _OnBoardingViewState extends State<OnBoardingView> {
 }
 
 class OnBoardingPage extends StatelessWidget {
-  SliderObject _sliderObject;
-  OnBoardingPage(this._sliderObject, {Key? key}) : super(key: key);
+  SliderObject sliderObject;
+  OnBoardingPage(this.sliderObject, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -177,7 +183,7 @@ class OnBoardingPage extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(AppPadding.p8),
           child: Text(
-            _sliderObject.title,
+            sliderObject.title,
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.headline1,
           ),
@@ -185,7 +191,7 @@ class OnBoardingPage extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(AppPadding.p8),
           child: Text(
-            _sliderObject.subTitle,
+            sliderObject.subTitle,
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.subtitle1,
           ),
@@ -193,7 +199,7 @@ class OnBoardingPage extends StatelessWidget {
         const SizedBox(
           height: AppSize.s60,
         ),
-        SvgPicture.asset(_sliderObject.image)
+        SvgPicture.asset(sliderObject.image)
       ],
     );
   }

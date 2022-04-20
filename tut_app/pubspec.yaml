@@ -67,7 +67,12 @@ flutter:
     - assets/images/onboarding_logo3.svg
     - assets/images/onboarding_logo4.svg
     - assets/images/change_lang_ic.svg
-    - assets/images/
+
+    - assets/images/hollow_cirlce_ic.svg  
+      
+    - assets/images/right_arrow_ic.svg
+    - assets/images/left_arrow_ic.svg
+    - assets/images/solid_circle_ic.svg
     
     
 
