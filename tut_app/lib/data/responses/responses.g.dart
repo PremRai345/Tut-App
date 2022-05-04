@@ -68,5 +68,5 @@ Map<String, dynamic> _$AuthenticationResponseToJson(
       'status': instance.status,
       'messgae': instance.message,
       'customer': instance.customer,
-      'contact': instance.contacts,
+      'contact': instance.contact,
     };

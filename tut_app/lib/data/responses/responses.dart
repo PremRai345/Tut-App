@@ -20,7 +20,7 @@ class CustomerResponse {
 
   CustomerResponse(this.id, this.name, this.numOfNotifications);
 
-   //from json
+  //from json
   factory CustomerResponse.fromJson(Map<String, dynamic> json) =>
       _$CustomerResponseFromJson(json);
 
@@ -39,7 +39,7 @@ class ContactResponse {
 
   ContactResponse(this.email, this.phone, this.link);
 
-   //from json
+  //from json
   factory ContactResponse.fromJson(Map<String, dynamic> json) =>
       _$ContactResponseFromJson(json);
 
@@ -52,9 +52,9 @@ class AuthenticationResponse extends BaseResponse {
   @JsonKey(name: "customer")
   CustomerResponse? customer;
   @JsonKey(name: "contact")
-  CustomerResponse? contacts;
+  CustomerResponse? contact;
 
-  AuthenticationResponse(this.customer, this.contacts);
+  AuthenticationResponse(this.customer, this.contact);
   //from json
   factory AuthenticationResponse.fromJson(Map<String, dynamic> json) =>
       _$AuthenticationResponseFromJson(json);
